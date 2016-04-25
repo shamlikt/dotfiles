@@ -1,0 +1,20 @@
+[user]
+	name = shamlik
+	email = tshamlikt@gmail.com
+[core]
+	editor = vim
+[pull]
+     rebase=True
+
+[alias]
+   st = status
+   ci = commit
+   br = branch
+   co = checkout
+   df = diff
+   lg = log -p
+   unstage = reset HEAD 
+   serve=daemon --reuseaddr --base-path=. --export-all --verbose
+   dc = diff --cached
+[push]
+	default = matching
