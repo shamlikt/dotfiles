@@ -20,14 +20,31 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-(iswitchb-mode t)
-(projectile-global-mode t)
+(ido-mode t)
 (global-set-key (kbd"C-c r") (lambda ()
                                (interactive)
                                (revert-buffer t t t)
                                (message "buffer is reverted")))
 
 
+
+
+
+(add-hook 'python-mode-hook 'flymake-mode)
+(require 'flymake-cursor)
+
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+
+(add-hook 'html-mode-hook 'multi-web-mode)
+
+(package-initialize)
+(put 'scroll-left 'disabled nil)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+(projectile-global-mode t)
 
 (when (load "flymake" t)
   (defun flymake-pylint-init ()
@@ -41,11 +58,3 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pylint-init)))
 
-
-(add-hook 'python-mode-hook 'flymake-mode)
-(require 'flymake-cursor)
-
-(add-hook 'html-mode-hook 'multi-web-mode)
-
-(package-initialize)
-(put 'scroll-left 'disabled nil)

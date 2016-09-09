@@ -88,10 +88,10 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias torb='~/tor-browser_en-US/start-tor-browser'
+alias torb='~/bin/tor-browser_en-US/start-tor-browser.desktop'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[f;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias cdh='cd ~/Music/Course_Noufal'
+alias cdh='cd ~/hamon/vmc'
 alias xx=clear
 alias server='ssh shamlik@students.thelycaeum.in' 
 alias geny='~/Downloads/genymotion/genymotion'
@@ -120,10 +120,31 @@ alias cdm='workon falcon; cd /home/shamlik/hamon/PROJECT-FALCON/falcon'
 alias venv='source /home/shamlik/Music/Hwacha/venv/bin/activate'
 alias cdb='cd $OLDPWD'
 
-. /usr/local/bin/virtualenvwrapper.sh
+#. /usr/local/bin/virtualenvwrapper.sh
 alias pingg='ping 8.8.8.8'
 alias ec='emacsclient -n'
 alias vpnbrowser='sudo openvpn --config ~/Documents/open_vpn/fast_browsing/vpnbook-de233-tcp443.ovpn'
 alias vpndwon='sudo openvpn --config ~/Documents/open_vpn/P2P/vpnbook-euro2-tcp443.ovpn'
-
 alias ec='emacsclient -n'
+xmodmap .xmodmap 2> /dev/null
+# Disable TouchPad 
+alias td='xinput set-prop 12 "Device Enabled" 0'
+alias te='xinput set-prop 12 "Device Enabled" 1'
+
+# add Path to ~/bin folder
+export PATH=$PATH":$HOME/bin"
+
+# to show git branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export PS1="\u@\h:\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
+
+#PS1='$(printf "%*s\r%s" $(( COLUMNS-1 )) "$(parse_git_branch)" "\u@\h:\[\033[34m\]\w\[\033[33m\]$ ")'
+#PS1='$(printf "%*s\r%s" $(( COLUMNS-1 )) "[$(git branch 2>/dev/null | grep '^*' | sed s/..//)] $(date +%H:%M:%S)" "heipei@wavefront:$PWD$ ")'
+#PS1='$(printf "%*s\r%s" $(( COLUMNS-1 )) "$(parse_git_branch)" "\u@\h:\[\033[32m\]\w[\033\[32m\]")'
+
+#python rc for REPL auto
+export PYTHONSTARTUP='/home/shamlik/bin/rc.py'
+
+#syndaemon -i 1 -KRd
