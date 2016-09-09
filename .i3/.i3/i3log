@@ -1,0 +1,24 @@
+Thursday 26 May 2016 12:23:56  IST - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+Thursday 26 May 2016 12:23:56  IST - i3 4.11 (2015-09-30, branch "4.11") starting
+Thursday 26 May 2016 12:23:56  IST - Parsing configfile /home/shamlik/.i3/config
+Thursday 26 May 2016 12:23:56  IST - deciding for version 4 due to this line: bindsym $mod+j focus left
+Thursday 26 May 2016 12:23:56  IST - [libi3] libi3/font.c Using Pango font Inconsolata, size 11
+Thursday 26 May 2016 12:23:56  IST - [libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+Thursday 26 May 2016 12:23:56  IST - [libi3] libi3/font.c Using X font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+ERROR: Another window manager seems to be running (X error 10)
+Thursday 26 May 2016 12:24:02  IST - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+Thursday 26 May 2016 12:24:02  IST - i3 4.11 (2015-09-30, branch "4.11") starting
+Thursday 26 May 2016 12:24:02  IST - Parsing configfile /home/shamlik/.i3/config
+Thursday 26 May 2016 12:24:02  IST - deciding for version 4 due to this line: bindsym $mod+j focus left
+Thursday 26 May 2016 12:24:02  IST - [libi3] libi3/font.c Using Pango font Inconsolata, size 11
+Thursday 26 May 2016 12:24:02  IST - [libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+Thursday 26 May 2016 12:24:02  IST - [libi3] libi3/font.c Using X font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+ERROR: Another window manager seems to be running (X error 10)
+Thursday 26 May 2016 12:24:15  IST - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+Thursday 26 May 2016 12:24:15  IST - i3 4.11 (2015-09-30, branch "4.11") starting
+Thursday 26 May 2016 12:24:15  IST - Parsing configfile /home/shamlik/.i3/config
+Thursday 26 May 2016 12:24:15  IST - deciding for version 4 due to this line: bindsym $mod+j focus left
+Thursday 26 May 2016 12:24:15  IST - [libi3] libi3/font.c Using Pango font Inconsolata, size 11
+Thursday 26 May 2016 12:24:15  IST - [libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+Thursday 26 May 2016 12:24:15  IST - [libi3] libi3/font.c Using X font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+ERROR: Another window manager seems to be running (X error 10)
