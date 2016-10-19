@@ -123,8 +123,7 @@ alias cdb='cd $OLDPWD'
 #. /usr/local/bin/virtualenvwrapper.sh
 alias pingg='ping 8.8.8.8'
 alias ec='emacsclient -n'
-alias vpnbrowser='sudo openvpn --config ~/Documents/open_vpn/fast_browsing/vpnbook-de233-tcp443.ovpn'
-alias vpndwon='sudo openvpn --config ~/Documents/open_vpn/P2P/vpnbook-euro2-tcp443.ovpn'
+alias vpnbrowser='/home/shamlik/Documents/freevpn/vpn.sh'
 alias ec='emacsclient -n'
 xmodmap .xmodmap 2> /dev/null
 # Disable TouchPad 
@@ -147,4 +146,7 @@ export PS1="\u@\h:\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 #python rc for REPL auto
 export PYTHONSTARTUP='/home/shamlik/bin/rc.py'
 
+# flux app
+fluxgui & 
+disown 
 #syndaemon -i 1 -KRd
