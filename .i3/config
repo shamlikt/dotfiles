@@ -155,9 +155,8 @@ assign [class="[dD]eluge"] 8
 exec --no-startup-id nautilus
 exec --no-startup-id vlc
 exec --no-startup-id emacs
-exec --no-startup-id banshee
-exec --no-startup-id google-chrome-stable
+exec --no-startup-id firefox
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-terminal
-exec --no-startup-id nemo
+#exec --no-startup-id nemo
 
