@@ -89,6 +89,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias torb='~/bin/tor-browser_en-US/start-tor-browser.desktop'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[f;&|]\s*alert$//'\'')"'
@@ -112,11 +113,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+alias cdm='cd ~/hamon/vmcmon'
+alias cdr='cd /home/shamlik/project/reckOd'
 alias cdh='cd ~/hamon/vmc'
 alias xx=clear
 alias server='ssh shamlik@students.thelycaeum.in' 
 alias geny='~/Downloads/genymotion/genymotion'
-alias cdm='workon falcon; cd /home/shamlik/hamon/PROJECT-FALCON/falcon'
 alias venv='source /home/shamlik/Music/Hwacha/venv/bin/activate'
 alias cdb='cd $OLDPWD'
 
@@ -133,6 +135,20 @@ alias te='xinput set-prop 12 "Device Enabled" 1'
 # add Path to ~/bin folder
 export PATH=$PATH":$HOME/bin"
 
+#----------------------------------------------------------------------------------------------------
+# Eternal bash history.                                                                             -
+# Password should be remove ..................!                                                     -
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTCONTROL=erasedups # To remove duplicate 
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+#--------------------------------------------------------------------------------------------------
 # to show git branch
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -145,8 +161,13 @@ export PS1="\u@\h:\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 #python rc for REPL auto
 export PYTHONSTARTUP='/home/shamlik/bin/rc.py'
+ 
 
-# flux app
-fluxgui & 
-disown 
 #syndaemon -i 1 -KRd
+alias pp=python3
+
+PATH="/home/shamlik/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/shamlik/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/shamlik/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/shamlik/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/shamlik/perl5"; export PERL_MM_OPT;
