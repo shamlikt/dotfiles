@@ -5,6 +5,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-safe-themes
+   (quote
+    ("2b6bd2ebad907ee42b3ffefa4831f348e3652ea8245570cdda67f0034f07db93" "b550fc3d6f0407185ace746913449f6ed5ddc4a9f0cf3be218af4fb3127c7877" default)))
  '(show-paren-style (quote expression)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -21,6 +24,8 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(add-to-list 'package-archives
+                 '("melpa" . "http://melpa.org/packages/"))
 (ido-mode t)
 (global-set-key (kbd"C-c r") (lambda ()
                                (interactive)
@@ -28,12 +33,15 @@
                                (message "buffer is reverted")))
 
 
-
-
+; josnlint
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/share/npm/bin"))
+(setq exec-path (append exec-path '("/usr/local/share/npm/bin")))
+(global-set-key (kbd "C-c j v") 'flymake-json-load)
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-;; (scroll-bar-mode 0)
+
+;(toggle-scroll-bar -1) 
 (flyspell-mode 1)
 (server-start 1)
 
@@ -48,8 +56,10 @@
 (projectile-global-mode t)
 
 (global-flycheck-mode)
+(server-start)
 
-                
+(require 'zoom-frm)
+
 (defun my-compile ()
   "Use compile to run python programs"
   (interactive)
@@ -58,3 +68,12 @@
 
 (local-set-key "\C-c\C-c" 'my-compile)
 (put 'narrow-to-region 'disabled nil)
+
+(add-to-list 'load-path "~/")
+(require 'neotree)
+(global-set-key "\C-ct" 'neotree-toggle)
+
+(load-theme 'gruvbox-dark-hard t)
+
+;;(global-nlinum-mode t)
+(scroll-bar-mode -1)

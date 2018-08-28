@@ -114,20 +114,19 @@ if ! shopt -oq posix; then
   fi
 fi
 alias cdm='cd ~/hamon/vmcmon'
-alias cdr='cd /home/shamlik/project/reckOd'
 alias cdh='cd ~/hamon/vmc'
+alias cdg='cd ~/go_code/src/github.com/'
+alias cdb='cd ~/go_code/bin/'
 alias xx=clear
-alias server='ssh shamlik@students.thelycaeum.in' 
 alias geny='~/Downloads/genymotion/genymotion'
-alias venv='source /home/shamlik/Music/Hwacha/venv/bin/activate'
-alias cdb='cd $OLDPWD'
+alias resetkey='setxkbmap -layout us && xmodmap ~/.xmodmap'
 
 #. /usr/local/bin/virtualenvwrapper.sh
 alias pingg='ping 8.8.8.8'
 alias ec='emacsclient -n'
 alias vpnbrowser='/home/shamlik/Documents/freevpn/vpn.sh'
 alias ec='emacsclient -n'
-xmodmap .xmodmap 2> /dev/null
+#xmodmap .xmodmap 2> /dev/null
 # Disable TouchPad 
 alias td='xinput set-prop 12 "Device Enabled" 0'
 alias te='xinput set-prop 12 "Device Enabled" 1'
@@ -161,7 +160,12 @@ export PS1="\u@\h:\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 #python rc for REPL auto
 export PYTHONSTARTUP='/home/shamlik/bin/rc.py'
- 
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH="$HOME/go_code"
+export GOBIN="$GOPATH/bin"
+
+
 
 #syndaemon -i 1 -KRd
 alias pp=python3
@@ -171,3 +175,6 @@ PERL5LIB="/home/shamlik/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5L
 PERL_LOCAL_LIB_ROOT="/home/shamlik/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/shamlik/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/shamlik/perl5"; export PERL_MM_OPT;
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
