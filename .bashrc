@@ -116,6 +116,7 @@ fi
 alias cdm='cd ~/hamon/vmcmon'
 alias cdh='cd ~/hamon/vmc'
 alias cdg='cd ~/go_code/src/github.com/'
+alias cdgg='cd ~/go_code/src/gitlab.com/'
 alias cdb='cd ~/go_code/bin/'
 alias xx=clear
 alias geny='~/Downloads/genymotion/genymotion'
@@ -164,6 +165,7 @@ export PYTHONSTARTUP='/home/shamlik/bin/rc.py'
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/go_code"
 export GOBIN="$GOPATH/bin"
+export PATH=$PATH:$GOPATH:$GOBIN
 
 
 
@@ -177,4 +179,13 @@ PERL_MB_OPT="--install_base \"/home/shamlik/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/shamlik/perl5"; export PERL_MM_OPT;
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/ffmpeg/lib/pkgconfig/
 
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias umb='ssh -A shamlik@34.73.167.97'
+alias cdx='cd /home/shamlik/extra/xwd/xwd/application/client'

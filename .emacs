@@ -8,6 +8,9 @@
  '(custom-safe-themes
    (quote
     ("2b6bd2ebad907ee42b3ffefa4831f348e3652ea8245570cdda67f0034f07db93" "b550fc3d6f0407185ace746913449f6ed5ddc4a9f0cf3be218af4fb3127c7877" default)))
+ '(package-selected-packages
+   (quote
+    (discover-js2-refactor flymake-gjshint go-projectile go-rename go-stacktracer nlinum evil-python-movement protobuf-mode bln-mode groovy-mode butler jenkins jenkins-watch company-jedi jedi jedi-core magit go-playground company company-go yaml-mode suscolors-theme projectile-git-autofetch neotree helm-projectile gruvbox-theme go-guru go-gopath go-dlv go-direx go-complete go-autocomplete go-add-tags flycheck fireplace exec-path-from-shell)))
  '(show-paren-style (quote expression)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -18,7 +21,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
-(setq org-agenda-files '("~/vyoma_time.org"))
+(setq org-agenda-files '("~/intellicar_time.org"))
 (global-set-key "\C-ca" 'org-agenda)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -53,12 +56,12 @@
 (package-initialize)
 (put 'scroll-left 'disabled nil)
 
-(projectile-global-mode t)
+(projectile-mode t)
 
-(global-flycheck-mode)
+(global-flycheck-mode t)
 (server-start)
 
-(require 'zoom-frm)
+;(require 'zoom-frm)
 
 (defun my-compile ()
   "Use compile to run python programs"
@@ -74,6 +77,6 @@
 (global-set-key "\C-ct" 'neotree-toggle)
 
 (load-theme 'gruvbox-dark-hard t)
-
+(load-file "~/.emacs.d/init.el")
 ;;(global-nlinum-mode t)
 (scroll-bar-mode -1)

@@ -169,8 +169,8 @@ exec --no-startup-id nemo
 #exec /usr/libexec/gnome-settings-daemon
 
 # vol up and down
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- '-5%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+5%'
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 '-5%'
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0  '+5%'
 
 # screen lock
 bindsym Control+Mod1+l exec gnome-screensaver-command -l
@@ -180,4 +180,5 @@ bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 10
 
 # mute
-bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+#bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0
